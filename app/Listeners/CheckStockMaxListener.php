@@ -20,7 +20,7 @@ class CheckStockMaxListener
     {
         $product = $event->getProduct();
         if ($product->stock >= $product->stock_max) {
-            \Mail::to(env('MAIL_STOCK'))->send(new StockGreatherMax($product));
+            \Mail::to(env('MAIL_STOCK'))->queue(new StockGreatherMax($product));
         }
 
         /* ProductUpdating

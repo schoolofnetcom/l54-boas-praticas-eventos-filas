@@ -7,8 +7,9 @@ use App\Payment\PaymentGateway;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class DoPaymentListener
+class DoPaymentListener implements ShouldQueue
 {
+    use InteractsWithQueue;
     /**
      * @var PaymentGateway
      */
